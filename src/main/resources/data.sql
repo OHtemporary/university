@@ -32,15 +32,15 @@ INSERT INTO command_requests (id, command, locale, request_pattern, start_positi
 VALUES (7, 'DEPARTMENT_STATISTICS', 'EN', '^Show [a-zA-Z0-9_.-]* statistics$', 5, 11, 2);
 INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
 VALUES (8, 'DEPARTMENT_STATISTICS', 'EN', '^show [a-zA-Z0-9_.-]* statistics$', 5, 11, 2);
-    -- AVERAGE_DEPARTMENT_SALARY
+    -- AVERAGE_SALARY_OF_DEPARTMENT
 INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
-VALUES (9, 'AVERAGE_DEPARTMENT_SALARY', 'EN', '^Show the average salary for the department [a-zA-Z0-9_.-]*\.$', 43, 1, 3);
+VALUES (9, 'AVERAGE_SALARY_OF_DEPARTMENT', 'EN', '^Show the average salary for the department [a-zA-Z0-9_.-]*\.$', 43, 1, 3);
 INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
-VALUES (10, 'AVERAGE_DEPARTMENT_SALARY', 'EN', '^show the average salary for the department [a-zA-Z0-9_.-]*\.$', 43, 1, 3);
+VALUES (10, 'AVERAGE_SALARY_OF_DEPARTMENT', 'EN', '^show the average salary for the department [a-zA-Z0-9_.-]*\.$', 43, 1, 3);
 INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
-VALUES (11, 'AVERAGE_DEPARTMENT_SALARY', 'EN', '^Show the average salary for the department [a-zA-Z0-9_.-]*$', 43, 0, 3);
+VALUES (11, 'AVERAGE_SALARY_OF_DEPARTMENT', 'EN', '^Show the average salary for the department [a-zA-Z0-9_.-]*$', 43, 0, 3);
 INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
-VALUES (12, 'AVERAGE_DEPARTMENT_SALARY', 'EN', '^show the average salary for the department [a-zA-Z0-9_.-]*$', 43, 0, 3);
+VALUES (12, 'AVERAGE_SALARY_OF_DEPARTMENT', 'EN', '^show the average salary for the department [a-zA-Z0-9_.-]*$', 43, 0, 3);
     -- COUNT_EMPLOYEE_OF_DEPARTMENT
 INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
 VALUES (13, 'COUNT_EMPLOYEE_OF_DEPARTMENT', 'EN', '^Show count of employee for [a-zA-Z0-9_.-]*\.$', 27, 1, 4);

@@ -18,7 +18,7 @@ import java.util.Optional;
  * @since 01/05/2023
  **/
 @Component
-public class AverageDepartmentSalaryCommandResolver implements ICommandResolver {
+public class AverageSalaryOfDepartmentCommandResolver implements ICommandResolver {
     @Autowired
     private DepartmentRepository departmentRepository;
     @Autowired
@@ -26,7 +26,7 @@ public class AverageDepartmentSalaryCommandResolver implements ICommandResolver 
 
     @Override
     public Command getCommand() {
-        return Command.AVERAGE_DEPARTMENT_SALARY;
+        return Command.AVERAGE_SALARY_OF_DEPARTMENT;
     }
 
     @Override
