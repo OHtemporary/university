@@ -23,6 +23,8 @@ public class RequestHandler implements IRequestHandler {
     @Autowired
     private CommandResponseRepository commandResponseRepository;
     @Autowired
+    private ICommandParser commandParser;
+    @Autowired
     private List<ICommandResolver> commandResolvers;
 
     @Override
@@ -48,10 +50,11 @@ public class RequestHandler implements IRequestHandler {
             return unknownRequest(request);
         }
 
+        List<String> requestParams = commandParser.parse(commandRequest.get(), request);
         String response;
 
         try {
-            response = commandResolver.get().getResponse(commandRequest.get(), request, commandResponse.getResponse());
+            response = commandResolver.get().getResponse(requestParams, commandResponse.getResponseTemplate());
         } catch (Exception e) {
             response = "Unable to resolve the answer";
         }

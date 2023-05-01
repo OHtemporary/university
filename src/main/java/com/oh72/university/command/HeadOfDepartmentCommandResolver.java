@@ -1,13 +1,13 @@
 package com.oh72.university.command;
 
 import com.oh72.university.entity.Command;
-import com.oh72.university.entity.CommandRequest;
 import com.oh72.university.entity.Department;
 import com.oh72.university.entity.Lector;
 import com.oh72.university.repository.DepartmentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -28,8 +28,8 @@ public class HeadOfDepartmentCommandResolver implements ICommandResolver {
     }
 
     @Override
-    public String getResponse(CommandRequest requestTemplate, String request, String responseTemplate) {
-        String departmentName = request.substring(requestTemplate.getStartPosition(), requestTemplate.getEndPosition());
+    public String getResponse(List<String> requestParams, String responseTemplate) {
+        String departmentName = requestParams.get(0);
         Optional<Department> department = departmentRepository.findByName(departmentName);
 
         if (department.isEmpty()) {

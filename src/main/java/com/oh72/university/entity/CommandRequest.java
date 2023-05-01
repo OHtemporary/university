@@ -21,7 +21,9 @@ public class CommandRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     Long id;
+    @Enumerated(EnumType.STRING)
     Command command;
+    @Enumerated(EnumType.STRING)
     Locale locale;
     String requestPattern;
     Integer startPosition;

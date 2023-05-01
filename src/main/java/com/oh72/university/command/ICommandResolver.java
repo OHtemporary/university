@@ -1,7 +1,8 @@
 package com.oh72.university.command;
 
 import com.oh72.university.entity.Command;
-import com.oh72.university.entity.CommandRequest;
+
+import java.util.List;
 
 /**
  * @author Oleh Hembarovskyi
@@ -10,5 +11,5 @@ import com.oh72.university.entity.CommandRequest;
 public interface ICommandResolver {
     Command getCommand();
 
-    String getResponse(CommandRequest requestTemplate, String request, String responseTemplate);
+    String getResponse(List<String> requestParams, String responseTemplate);
 }

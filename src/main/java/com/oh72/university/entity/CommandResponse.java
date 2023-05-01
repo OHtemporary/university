@@ -23,7 +23,7 @@ public class CommandResponse {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     Long id;
-    String response;
+    String responseTemplate;
     @OneToMany(mappedBy = "response")
     Set<CommandRequest> requests;
 }
