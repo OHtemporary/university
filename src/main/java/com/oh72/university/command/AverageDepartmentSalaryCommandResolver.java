@@ -1,7 +1,6 @@
 package com.oh72.university.command;
 
 import com.oh72.university.entity.Command;
-import com.oh72.university.entity.Degree;
 import com.oh72.university.entity.Department;
 import com.oh72.university.repository.DepartmentRepository;
 import com.oh72.university.repository.LectorDepartmentRelationRepository;
@@ -13,13 +12,13 @@ import java.util.Optional;
 
 /**
  * Request:
- * Show {department_name} statistics.
+ * Show the average salary for the department {department_name}.
  *
  * @author Oleh Hembarovskyi
  * @since 01/05/2023
  **/
 @Component
-public class DepartmentStatisticsCommandResolver implements ICommandResolver {
+public class AverageDepartmentSalaryCommandResolver implements ICommandResolver {
     @Autowired
     private DepartmentRepository departmentRepository;
     @Autowired
@@ -27,7 +26,7 @@ public class DepartmentStatisticsCommandResolver implements ICommandResolver {
 
     @Override
     public Command getCommand() {
-        return Command.DEPARTMENT_STATISTICS;
+        return Command.AVERAGE_DEPARTMENT_SALARY;
     }
 
     @Override
@@ -40,13 +39,8 @@ public class DepartmentStatisticsCommandResolver implements ICommandResolver {
             return "Not found Department with name: \"%s\"".formatted(departmentName);
         }
 
-        int assistants = lectorDepartmentRelationRepository
-                .findLectorsInDepartmentByDegree(department.get().getId(), Degree.ASSISTANT).size();
-        int associateProfessors = lectorDepartmentRelationRepository
-                .findLectorsInDepartmentByDegree(department.get().getId(), Degree.ASSOCIATE_PROFESSOR).size();
-        int professors = lectorDepartmentRelationRepository
-                .findLectorsInDepartmentByDegree(department.get().getId(), Degree.PROFESSOR).size();
+        Double avgSalary = lectorDepartmentRelationRepository.averageDepartmentSalary(department.get().getId());
 
-        return responseTemplate.formatted(assistants, associateProfessors, professors);
+        return responseTemplate.formatted(departmentName, avgSalary);
     }
 }

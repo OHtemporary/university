@@ -16,4 +16,8 @@ public interface LectorDepartmentRelationRepository extends JpaRepository<Lector
             "WHERE relation.lector.degree = :degree " +
             "AND relation.department.id = :departmentId")
     List<LectorDepartmentRelation> findLectorsInDepartmentByDegree(Long departmentId, Degree degree);
+
+    @Query(value = "SELECT AVG(relation.salary) FROM LectorDepartmentRelation AS relation " +
+            "WHERE relation.department.id = :departmentId")
+    Double averageDepartmentSalary(Long departmentId);
 }

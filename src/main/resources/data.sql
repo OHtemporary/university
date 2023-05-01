@@ -10,6 +10,7 @@ INSERT INTO lector_department_relations (id, lector_id, department_id, salary) V
 -- Command Responses
 INSERT INTO command_responses (id, response_template) VALUES (1, 'Head of %s department is %s');
 INSERT INTO command_responses (id, response_template) VALUES (2, 'Assistans - %d.%nAssociate professors - %d.%nProfessors - %d.');
+INSERT INTO command_responses (id, response_template) VALUES (3, 'The average salary of %s is %.2f.');
 
 -- Command Requests
     -- HEAD_OF_DEPARTMENT
@@ -30,3 +31,12 @@ INSERT INTO command_requests (id, command, locale, request_pattern, start_positi
 VALUES (7, 'DEPARTMENT_STATISTICS', 'EN', '^Show [a-zA-Z0-9_.-]* statistics$', 5, 11, 2);
 INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
 VALUES (8, 'DEPARTMENT_STATISTICS', 'EN', '^show [a-zA-Z0-9_.-]* statistics$', 5, 11, 2);
+    -- AVERAGE_DEPARTMENT_SALARY
+INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
+VALUES (9, 'AVERAGE_DEPARTMENT_SALARY', 'EN', '^Show the average salary for the department [a-zA-Z0-9_.-]*.$', 43, 1, 3);
+INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
+VALUES (10, 'AVERAGE_DEPARTMENT_SALARY', 'EN', '^show the average salary for the department [a-zA-Z0-9_.-]*.$', 43, 1, 3);
+INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
+VALUES (11, 'AVERAGE_DEPARTMENT_SALARY', 'EN', '^Show the average salary for the department [a-zA-Z0-9_.-]*$', 43, 0, 3);
+INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
+VALUES (12, 'AVERAGE_DEPARTMENT_SALARY', 'EN', '^show the average salary for the department [a-zA-Z0-9_.-]*$', 43, 0, 3);
