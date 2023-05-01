@@ -14,6 +14,7 @@ public class ConsoleRequestProvider implements IRequestProvider {
 
     public ConsoleRequestProvider() {
         scanner = new Scanner(System.in);
+        System.out.println("To exit the program print: stop");
     }
 
     @Override

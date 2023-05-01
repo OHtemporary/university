@@ -56,7 +56,6 @@ public class RequestHandler implements IRequestHandler {
         try {
             response = commandResolver.get().getResponse(requestParams, commandResponse.getResponseTemplate());
         } catch (Exception e) {
-            e.printStackTrace();
             response = "Unable to resolve the answer";
         }
 
