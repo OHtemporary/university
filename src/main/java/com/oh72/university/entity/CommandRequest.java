@@ -9,23 +9,22 @@ import lombok.experimental.FieldDefaults;
 
 /**
  * @author Oleh Hembarovskyi
- * @since 30/04/2023
+ * @since 01/05/2023
  **/
-@Table(name = "lector_department_relations")
+@Table(name = "command_requests")
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class LectorDepartmentRelation {
+public class CommandRequest {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     Long id;
+    Command command;
+    Locale locale;
+    String request;
     @ManyToOne
-    @JoinColumn(name = "lectorId")
-    Lector lector;
-    @ManyToOne
-    @JoinColumn(name = "departmentId")
-    Department department;
-    Double salary;
+    @JoinColumn(name = "response_id")
+    CommandResponse response;
 }

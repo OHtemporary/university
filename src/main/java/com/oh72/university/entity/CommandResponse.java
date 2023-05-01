@@ -7,25 +7,23 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Set;
+
 /**
  * @author Oleh Hembarovskyi
- * @since 30/04/2023
+ * @since 01/05/2023
  **/
-@Table(name = "lector_department_relations")
+@Table(name = "command_responses")
 @Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class LectorDepartmentRelation {
+public class CommandResponse {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     Long id;
-    @ManyToOne
-    @JoinColumn(name = "lectorId")
-    Lector lector;
-    @ManyToOne
-    @JoinColumn(name = "departmentId")
-    Department department;
-    Double salary;
+    String response;
+    @OneToMany(mappedBy = "response")
+    Set<CommandRequest> requests;
 }
