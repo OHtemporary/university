@@ -23,7 +23,9 @@ public class CommandRequest {
     Long id;
     Command command;
     Locale locale;
-    String request;
+    String requestPattern;
+    Integer startPosition;
+    Integer endPosition;
     @ManyToOne
     @JoinColumn(name = "response_id")
     CommandResponse response;

@@ -7,7 +7,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
+import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author Oleh Hembarovskyi
@@ -29,4 +32,10 @@ public class Lector {
     Degree degree;
     @OneToMany
     Set<LectorDepartmentRelation> departments;
+
+    public String getName() {
+        return Stream.of(firstName, lastName)
+                .filter(Objects::nonNull)
+                .collect(Collectors.joining(" "));
+    }
 }
