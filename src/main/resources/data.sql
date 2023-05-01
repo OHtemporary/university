@@ -12,6 +12,7 @@ INSERT INTO command_responses (id, response_template) VALUES (1, 'Head of %s dep
 INSERT INTO command_responses (id, response_template) VALUES (2, 'Assistans - %d.%nAssociate professors - %d.%nProfessors - %d.');
 INSERT INTO command_responses (id, response_template) VALUES (3, 'The average salary of %s is %.2f.');
 INSERT INTO command_responses (id, response_template) VALUES (4, '%d');
+INSERT INTO command_responses (id, response_template) VALUES (5, '%s');
 
 -- Command Requests
     -- HEAD_OF_DEPARTMENT
@@ -50,3 +51,12 @@ INSERT INTO command_requests (id, command, locale, request_pattern, start_positi
 VALUES (15, 'COUNT_EMPLOYEE_OF_DEPARTMENT', 'EN', '^Show count of employee for [a-zA-Z0-9_.-]*$', 27, 0, 4);
 INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
 VALUES (16, 'COUNT_EMPLOYEE_OF_DEPARTMENT', 'EN', '^show count of employee for [a-zA-Z0-9_.-]*$', 27, 0, 4);
+    -- GLOBAL_SEARCH_EMPLOYEE
+INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
+VALUES (17, 'GLOBAL_SEARCH_EMPLOYEE', 'EN', '^Global search by [a-zA-Z0-9_.-]*\.$', 17, 1, 5);
+INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
+VALUES (18, 'GLOBAL_SEARCH_EMPLOYEE', 'EN', '^global search by [a-zA-Z0-9_.-]*\.$', 17, 1, 5);
+INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
+VALUES (19, 'GLOBAL_SEARCH_EMPLOYEE', 'EN', '^Global search by [a-zA-Z0-9_.-]*$', 17, 0, 5);
+INSERT INTO command_requests (id, command, locale, request_pattern, start_position, end_position, response_id)
+VALUES (20, 'GLOBAL_SEARCH_EMPLOYEE', 'EN', '^global search by [a-zA-Z0-9_.-]*$', 17, 0, 5);
