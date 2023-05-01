@@ -1,11 +1,41 @@
 -- Lectors
-INSERT INTO lectors (id, first_name, last_name, degree) VALUES (1, 'Test_A', 'Test_A', 'ASSISTANT');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (1,'Hewe','Vignaux','PROFESSOR');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (2,'Lucila','Winton','PROFESSOR');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (3,'Dorelle','Phillipp','PROFESSOR');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (4,'Giffy','Onn','ASSOCIATE_PROFESSOR');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (5,'Shanda','Harriday','ASSOCIATE_PROFESSOR');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (6,'Nara','Friel','ASSOCIATE_PROFESSOR');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (7,'Jacquette','Langelaan','ASSOCIATE_PROFESSOR');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (8,'Chrissy','Megroff','ASSISTANT');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (9,'Nicky','Ipplett','ASSISTANT');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (10,'Sallee','Banham','ASSISTANT');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (11,'Hershel','Josephov','ASSISTANT');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (12,'Keane','De Beauchemp','ASSISTANT');
+INSERT INTO lectors (id, first_name, last_name, degree) VALUES (13,'Elvina','Shepherdson','ASSISTANT');
 
 -- Departments
-INSERT INTO departments (id, name, head_id) VALUES (1, 'Test_A', 1);
+INSERT INTO departments (id, name, head_id) VALUES (1,'Business Development',1);
+INSERT INTO departments (id, name, head_id) VALUES (2,'Engineering',2);
+INSERT INTO departments (id, name, head_id) VALUES (3,'Sales',3);
 
 -- Relations
 INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (1, 1, 1, 100);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (2, 2, 2, 200);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (3, 3, 3, 350);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (4, 4, 1, 50);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (5, 5, 2, 60);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (6, 6, 3, 70);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (7, 7, 1, 10);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (8, 8, 2, 200);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (9, 9, 3, 500);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (10, 10, 1, 200);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (11, 11, 2, 70);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (12, 12, 3, 80);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (13, 13, 1, 120);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (14, 1, 2, 330);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (15, 5, 3, 40);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (16, 9, 1, 10);
+INSERT INTO lector_department_relations (id, lector_id, department_id, salary) VALUES (17, 9, 2, 65);
 
 -- Command Responses
 INSERT INTO command_responses (id, response_template) VALUES (1, 'Head of %s department is %s');
